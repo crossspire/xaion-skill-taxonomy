@@ -39,7 +39,7 @@ def main():
 
     context = prompt["contexts"]
     messages = context + [{"role": "user", "content": "あいうえお"}]
-    gpt_response, error = gpt(messages=messages)
+    gpt_response, log_info, error = gpt(messages=messages)
 
     logger.info(f"gpt response: {gpt_response}")
 

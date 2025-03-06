@@ -33,7 +33,7 @@ class GPT:
     def __call__(
         self,
         messages: list[dict[str, str]],
-    ) -> tuple[str, str]:
+    ) -> tuple[str, dict[str, str], str]:
         """Request to gpt
 
         Args:
@@ -48,6 +48,7 @@ class GPT:
 
         Returns:
             gpt_response: GPT response
+            log_info: Log information
             error: Error message
         """
         gpt_response: str = ""
@@ -93,4 +94,4 @@ class GPT:
                 logger.info(f"gpt:\n{pprint.pformat(log_info, indent=4)}")
         except TypeError as e:
             logger.info(f"gpt error: {e}")
-        return gpt_response, error
+        return gpt_response, log_info, error
