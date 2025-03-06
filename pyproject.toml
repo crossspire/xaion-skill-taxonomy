@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "xaion-skill-taxonomy"
+version = "0.1.0"
+description = ""
+authors = ["toma <toma.suzuki@xaiondata.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.2.3"
+numpy = "^2.2.3"
+pydantic = "^2.10.6"
+loguru = "^0.7.3"
+python-dotenv = "^1.0.1"
+openai = "^1.65.4"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.15.0"
+isort = "^6.0.1"
+black = "^25.1.0"
+pandas-stubs = "^2.2.3.241126"
+types-pyyaml = "^6.0.12.20241230"
+types-tqdm = "^4.67.0.20250301"
+jupyterlab = "^4.3.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
