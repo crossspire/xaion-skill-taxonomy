@@ -51,7 +51,6 @@ class PostgresDB:
             print("接続が存在しません")
 
 
-
 def setup_db() -> PostgresDB:
     db = PostgresDB(
         os.environ["DB_HOSTNAME"],

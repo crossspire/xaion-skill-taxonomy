@@ -1,0 +1,12 @@
+{
+    "target_candidate_num": 10,
+    "target_skill_num": 6,
+    "completion_tokens": 1858,
+    "prompt_tokens": 63617,
+    "total_tokens": 65475,
+    "token_per_person": 6547.5,
+    "completion_cost": 0.0011148,
+    "prompt_cost": 0.00954255,
+    "total_cost": 0.01065735,
+    "cost_per_person": 0.001065735
+}

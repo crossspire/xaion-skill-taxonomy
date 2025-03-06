@@ -1,3 +1,5 @@
+target:
+  n: 1000
 sql:
   resume:
     path: "data/input/sql/resume.sql"
@@ -5,6 +7,11 @@ sql:
 prompt:
   skill_matcher:
     path: "data/prompt/skill_matcher.yaml"
+output:
+  extracted_skills:
+    path: "data/output/extracted_skills/extracted_skills.csv"
+  statistics:
+    path: "data/output/statistics/statistics.json"
 gpt:
   temperature: 0.7
   max_tokens: 2048

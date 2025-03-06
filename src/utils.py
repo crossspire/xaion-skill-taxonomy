@@ -9,7 +9,6 @@ def load_sql(path: str) -> str:
     return query
 
 
-
 def convert_df_types(df: pd.DataFrame, schema: dict[str, Any]) -> pd.DataFrame:
     for col, dtype in schema.items():
         if dtype is int:

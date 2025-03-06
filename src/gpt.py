@@ -1,6 +1,6 @@
 import pprint
 from time import perf_counter
-from typing import Optional
+from typing import Any
 
 from loguru import logger
 from openai import AzureOpenAI
@@ -33,7 +33,7 @@ class GPT:
     def __call__(
         self,
         messages: list[dict[str, str]],
-    ) -> tuple[str, dict[str, str], str]:
+    ) -> tuple[str, dict[str, Any], str]:
         """Request to gpt
 
         Args:
