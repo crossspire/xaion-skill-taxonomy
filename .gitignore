@@ -1,3 +1,4 @@
 .env
 *.pyc
 notebook/
+!**/extracted_skills/.gitkeep

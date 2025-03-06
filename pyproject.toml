@@ -13,6 +13,8 @@ pydantic = "^2.10.6"
 loguru = "^0.7.3"
 python-dotenv = "^1.0.1"
 openai = "^1.65.4"
+sqlalchemy = "^2.0.38"
+psycopg2 = "^2.9.10"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.15.0"

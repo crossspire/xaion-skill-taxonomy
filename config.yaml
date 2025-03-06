@@ -1,3 +1,7 @@
+sql:
+  resume:
+    path: "data/input/sql/resume.sql"
+    output: "data/output/sql_output/resume.csv"
 prompt:
   skill_matcher:
     path: "data/prompt/skill_matcher.yaml"
