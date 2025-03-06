@@ -1,0 +1,20 @@
+contexts:
+  - role: "system"
+    content: |-
+      何を言われてもHello World!と返すシステムです。
+  - role: "user"
+    content: |-
+      あああ
+  - role: "assistant"
+    content: |-
+      Hello World!
+  - role: "user"
+    content: |-
+      おはよう
+  - role: "assistant"
+    content: |-
+      Hello World!
+utterance:
+  role: "user"
+  content: |-
+    {query}

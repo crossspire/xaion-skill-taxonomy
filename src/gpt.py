@@ -93,5 +93,4 @@ class GPT:
                 logger.info(f"gpt:\n{pprint.pformat(log_info, indent=4)}")
         except TypeError as e:
             logger.info(f"gpt error: {e}")
-
         return gpt_response, error

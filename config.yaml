@@ -1,0 +1,8 @@
+prompt:
+  skill_matcher:
+    path: "data/prompt/skill_matcher.yaml"
+gpt:
+  temperature: 0.7
+  max_tokens: 2048
+  timeout: 60
+  verbose: false
