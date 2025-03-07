@@ -94,10 +94,14 @@ def main():
 
         extracted_skills = {}
         skill_name_set = set()
-        for extract_result in gpt_response.splitlines():
-            name, score, basis = extract_result.split(":")
-            extracted_skills[name] = {"score": score, "basis": basis}
-            skill_name_set.add(name)
+        try:
+            for extract_result in gpt_response.splitlines():
+                name, score, basis = extract_result.split(":")
+                extracted_skills[name] = {"score": score, "basis": basis}
+                skill_name_set.add(name)
+        except ValueError as e:
+            logger.error(f"抽出結果のパースに失敗: {row['linkedin_id']}")
+            continue
 
         result = {
             "name": row["name"],
