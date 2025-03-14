@@ -97,6 +97,7 @@ def main():
             for extract_result in gpt_response.splitlines():
                 name, score, basis, linkedin_skills = extract_result.split(":")
                 extracted_skills[name] = {"score": score, "basis": basis, "linkedin_skills": linkedin_skills.split(",")}
+                extracted_skills[name]["linkedin_skills"] = [""if skill == " " else skill for skill in extracted_skills[name]["linkedin_skills"]]
                 skill_name_set.add(name)
         except ValueError as e:
             logger.error(f"抽出結果のパースに失敗: {row['linkedin_id']}")
