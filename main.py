@@ -45,7 +45,6 @@ def main():
         except json.JSONDecodeError as e:
             logger.error(f"JSONのデコードに失敗: {row['integration_id']}")
             continue
-
         skill_str = ""
         for skill in data_dict["skills"]:
             skill_str += skill["name"] + ","
@@ -96,8 +95,8 @@ def main():
         skill_name_set = set()
         try:
             for extract_result in gpt_response.splitlines():
-                name, score, basis = extract_result.split(":")
-                extracted_skills[name] = {"score": score, "basis": basis}
+                name, score, basis, linkedin_skills = extract_result.split(":")
+                extracted_skills[name] = {"score": score, "basis": basis, "linkedin_skills": linkedin_skills.split(",")}
                 skill_name_set.add(name)
         except ValueError as e:
             logger.error(f"抽出結果のパースに失敗: {row['linkedin_id']}")
@@ -117,6 +116,7 @@ def main():
             result[f"skill_{i}_name"] = skill_name
             result[f"skill_{i}_score"] = extracted_skills[skill_name]["score"]
             result[f"skill_{i}_basis"] = extracted_skills[skill_name]["basis"]
+            result[f"skill_{i}_linkedin_skills"] = extracted_skills[skill_name]["linkedin_skills"]
         result_list.append(result)
 
         if len(result_list) == config["target"]["n"]:
