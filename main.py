@@ -95,12 +95,14 @@ def main():
         skill_name_set = set()
         try:
             for extract_result in gpt_response.splitlines():
-                name, score, basis, linkedin_skills = extract_result.split(":")
+                extract_result = extract_result[:-1] if (extract_result.count("$") == 4 and extract_result[-1] == "$") else extract_result
+                name, score, basis, linkedin_skills = extract_result.split("$")
                 extracted_skills[name] = {"score": score, "basis": basis, "linkedin_skills": linkedin_skills.split(",")}
                 extracted_skills[name]["linkedin_skills"] = [""if skill == " " else skill for skill in extracted_skills[name]["linkedin_skills"]]
+                extracted_skills[name]["linkedin_skills"] = [skill if (skill in row["skills"].split(",") or skill == "") else f"({skill})" for skill in extracted_skills[name]["linkedin_skills"]]
                 skill_name_set.add(name)
         except ValueError as e:
-            logger.error(f"抽出結果のパースに失敗: {row['linkedin_id']}")
+            logger.error(f"抽出結果のパースに失敗: {row['linkedin_id']}: {extract_result}")
             continue
 
         result = {

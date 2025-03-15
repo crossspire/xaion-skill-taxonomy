@@ -1,5 +1,5 @@
 target:
-  n: 1000
+  n: 100
 sql:
   resume:
     path: "data/input/sql/resume.sql"
